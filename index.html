@@ -13,50 +13,66 @@
 </head>
 
 <body>
-    <h1>Neuseelandreise</h1>
-    <h2>Etappentitel: Franz-Josef Gletscher</h2>
-    <p>Im Jahr 1852 benannte Leonard Harper Franz-Josef- und Fox-Gletscher nach Victoria und Albert, dem damaligen
-        englischen Königspaar. Da er dies aber nicht offiziell bekannt machte, wurde er 1865 vom deutschen Entdecker
-        Julius von Haast nach Franz Joseph I. von Österreich benannt. <br>
-        Er befindet sich auf der Westseite der Neuseeländischen Alpen. Wie sein südlicher Nachbar, der Fox-Gletscher,
-        fließt er von seinem flacheren Nährgebiet die steile Westflanke dieses Gebirges hinunter. Er entwässert über den
-        Waiho River in die Tasmansee. <br> Entstanden ist der Gletscher aufgrund der besonderen Lage der tektonischen
-        Platten, auf denen sich Aoraki/Mount Cook und seine umliegenden Berge befinden. An der Westküste von Neuseeland
-        treffen zwei Kontinentalplatten aufeinander und haben so ein sehr hohes Bergmassiv direkt an der Küste geformt.
-        (Quelle: <a href="https://de.wikipedia.org/wiki/Franz-Josef-Gletscher">Wikipedia</a> )
-    </p>
-    <h3>Übersichtskarte</h3>
-    <div id="map" style="width: 90%; height: 600px;border: 1px solid silver; margin: auto"></div>
 
-    <h3>Weiterführende Links</h3>
-    <ul>
-        <li><a href="https://www.franzjosefglacier.com/">Der offizielle Gletscher Guide</a></li>
-        <li><a href="https://www.newzealand.com/nz/franz-josef-glacier/">Informationen der neuseeländischen
-                Regierung</a></li>
-        <li><a href="https://myqueenstowndiary.com/franz-josef-glacier-new-zealand/">Interessante Fakten über den
-                Gletscher</a></li>
-    </ul>
-    <figure>
-        <img src="images/attraction.jpg"
-            alt="Dieses Bild ist der Franz-Joseph Gletscher. Es zeigt eine lange Gletscherzunge">
-        <figcaption>Der Franz-Joseph Gletscher aus frontaler Perspektive mit umgebender Landschaft (Quelle: <a
-                href="https://pixabay.com/de/photos/franz-joseph-glacier-neuseeland-2152331/">RobO100@pixabay</a>)
-        </figcaption>
-    </figure>
-    <nav>
-        <a href="https://gruenli.github.io/nz">Vorherige Etappe</a>
-        <a href="https://fabianwild.github.io/nz">Nächste Etappe</a>
-    </nav>
+    <header></header>
+    <main>
+        <article>
+            <h1>Neuseelandreise</h1>
+            <h2><em> Franz-Josef Gletscher</em></h2>
+            <p>Im Jahr 1852 benannte Leonard Harper Franz-Josef- und Fox-Gletscher nach Victoria und Albert, dem
+                damaligen
+                englischen Königspaar. Da er dies aber nicht offiziell bekannt machte, wurde er 1865 vom deutschen
+                Entdecker
+                Julius von Haast nach Franz Joseph I. von Österreich benannt. <br>
+                Er befindet sich auf der Westseite der Neuseeländischen Alpen. Wie sein südlicher Nachbar, der
+                Fox-Gletscher,
+                fließt er von seinem flacheren Nährgebiet die steile Westflanke dieses Gebirges hinunter. Er entwässert
+                über den
+                Waiho River in die Tasmansee. <br> Entstanden ist der Gletscher aufgrund der besonderen Lage der
+                tektonischen
+                Platten, auf denen sich Aoraki/Mount Cook und seine umliegenden Berge befinden. An der Westküste von
+                Neuseeland
+                treffen zwei Kontinentalplatten aufeinander und haben so ein sehr hohes Bergmassiv direkt an der Küste
+                geformt.
+                (Quelle: <a href="https://de.wikipedia.org/wiki/Franz-Josef-Gletscher">Wikipedia</a> )
+            </p>
+            <figure>
+                <img src="images/attraction.jpg"
+                    alt="Dieses Bild ist der Franz-Joseph Gletscher. Es zeigt eine lange Gletscherzunge">
+                <figcaption>Der Franz-Joseph Gletscher aus frontaler Perspektive mit umgebender Landschaft (Quelle: <a
+                        href="https://pixabay.com/de/photos/franz-joseph-glacier-neuseeland-2152331/">RobO100@pixabay</a>)
+                </figcaption>
+            </figure>
+            <h3>Übersichtskarte</h3>
+            <div id="map" style="width: 90%; height: 600px;border: 1px solid silver; margin: auto"></div>
+            <h3>Weiterführende Links</h3>
+            <ul>
+                <li><a href="https://www.franzjosefglacier.com/">Der offizielle Gletscher Guide</a></li>
+                <li><a href="https://www.newzealand.com/nz/franz-josef-glacier/">Informationen der neuseeländischen
+                        Regierung</a></li>
+                <li><a href="https://myqueenstowndiary.com/franz-josef-glacier-new-zealand/">Interessante Fakten über
+                        den
+                        Gletscher</a></li>
+            </ul>
+        </article>
+    </main>
+    <footer>
+        <nav>
+            <a href="https://gruenli.github.io/nz">Vorherige Etappe</a>
+            <a href="https://fabianwild.github.io/nz">Nächste Etappe</a>
+        </nav>
+    </footer>
+
     <script>
         var map = L.map('map').setView([-43.5, 170.22], 4); <!-- Hier wird auf die Leaflet Map verwiesen; 13 steht für den z-Wert um den hinaus gezoomt wird-->
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map); <!-- hier wird die Hintergrundkarte eingestellt  -->
+        }).addTo(map); < !--hier wird die Hintergrundkarte eingestellt-- >
 
-        L.marker([-43.5, 170.22]).addTo(map) <!-- der Marker wird gesetzt -->
-            .bindPopup('Der Franz-Joseph Gletscher') <!-- das Pop Up wird erzeugt  -->
-            .openPopup();   <!-- das Pop Up wird direkt geöffnet -->
+            L.marker([-43.5, 170.22]).addTo(map) < !--der Marker wird gesetzt-- >
+            .bindPopup('Der Franz-Joseph Gletscher') < !--das Pop Up wird erzeugt-- >
+            .openPopup();   < !--das Pop Up wird direkt geöffnet-- >
     </script>
 
 </body>
