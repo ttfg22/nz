@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neuseelandreise</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 </head>
 
 <body>
@@ -26,24 +28,37 @@
     <h3>Übersichtskarte</h3>
     <div id="map" style="width: 90%; height: 600px;border: 1px solid silver; margin: auto"></div>
 
-<h3>Weiterführende Links</h3>
-        <ul>
-            <li><a href="https://www.franzjosefglacier.com/">Der offizielle Gletscher Guide</a></li>
-            <li><a href="https://www.newzealand.com/nz/franz-josef-glacier/">Informationen der neuseeländischen Regierung</a></li>
-            <li><a href="https://myqueenstowndiary.com/franz-josef-glacier-new-zealand/">Interessante Fakten über den Gletscher</a></li>
-        </ul>
+    <h3>Weiterführende Links</h3>
+    <ul>
+        <li><a href="https://www.franzjosefglacier.com/">Der offizielle Gletscher Guide</a></li>
+        <li><a href="https://www.newzealand.com/nz/franz-josef-glacier/">Informationen der neuseeländischen
+                Regierung</a></li>
+        <li><a href="https://myqueenstowndiary.com/franz-josef-glacier-new-zealand/">Interessante Fakten über den
+                Gletscher</a></li>
+    </ul>
     <figure>
-        <img src="images/attraction.jpg" alt="Dieses Bild ist der Franz-Joseph Gletscher. Es zeigt eine lange Gletscherzunge">
-        <figcaption>Der Franz-Joseph Gletscher aus frontaler Perspektive mit umgebender Landschaft (Quelle: <a href="https://pixabay.com/de/photos/franz-joseph-glacier-neuseeland-2152331/">RobO100@pixabay</a>)</figcaption> 
+        <img src="images/attraction.jpg"
+            alt="Dieses Bild ist der Franz-Joseph Gletscher. Es zeigt eine lange Gletscherzunge">
+        <figcaption>Der Franz-Joseph Gletscher aus frontaler Perspektive mit umgebender Landschaft (Quelle: <a
+                href="https://pixabay.com/de/photos/franz-joseph-glacier-neuseeland-2152331/">RobO100@pixabay</a>)
+        </figcaption>
     </figure>
     <nav>
         <a href="https://gruenli.github.io/nz">Vorherige Etappe</a>
         <a href="https://fabianwild.github.io/nz">Nächste Etappe</a>
     </nav>
     <script>
-        
+        var map = L.map('map').setView([-43.5, 170.22], 13);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([-43.5, 170.22]).addTo(map)
+            .bindPopup('Der Franz-Joseph Gletscher')
+            .openPopup();   
     </script>
-    
+
 </body>
 
 </html>
