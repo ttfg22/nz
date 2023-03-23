@@ -10,6 +10,7 @@
         integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
         integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
@@ -74,7 +75,7 @@
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map); //hier wird die Hintergrundkarte eingestellt
 
-            L.marker([-43.5, 170.22]).addTo(map) //der Marker wird gesetzt
+        L.marker([-43.5, 170.22]).addTo(map) //der Marker wird gesetzt
             .bindPopup('Der Franz-Joseph Gletscher') //das Pop Up wird erzeugt
             .openPopup();   //das Pop Up wird direkt geöffnet
     </script>
