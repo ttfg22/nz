@@ -1,7 +1,7 @@
 //die Latitude und Longitude des Stops werden in Varibalen geschrieben
 let stop_lat = -43.5;
 let stop_long = 170.22;
-let zoom_factor = 13
+let zoom_factor = 5
 let title = 'Der Franz-Joseph Gletscher'
 
 const STOPS = [
@@ -107,4 +107,8 @@ for (let stop of STOPS){
     console.log(stop.lat);
     console.log(stop.lng);
     console.log(stop.wikipedia);
+
+    L.marker([stop.lat, stop.lng]).addTo(map) //der Marker wird gesetzt
+    .bindPopup(stop.title) //das Pop Up wird erzeugt
+    .openPopup();   //das Pop Up wird direkt geöffnet
 }
