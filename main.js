@@ -92,17 +92,38 @@ console.log(STOPS);
 //die map Variable wird festgelegt 
 let map = L.map('map').setView([stop_lat, stop_long], zoom_factor); // Hier wird auf die Leaflet Map verwiesen; 13 steht für den z-Wert um den hinaus gezoomt wird-->
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map); //hier wird die Hintergrundkarte eingestellt
+//define watercolour layer
+let watercolour = L.tileLayer.provider('Stamen.Watercolor').addTo(map);
+//define open street map layer
+let osm =L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map)
+//define airport layer 
+let airports =L.tileLayer.provider('OPNVKarte').addTo(map)
+
+//control the layer selection 
+L.control.layers({
+    "Openstreetmap": osm,
+    "Watercolor": watercolour,
+    "Airports": airports
+}).addTo(map)
+
+L.control.scale({
+    imperial: false,
+    position:"bottomright"})
+.addTo(map);
 
 L.marker([stop_lat, stop_long]).addTo(map) //der Marker wird gesetzt
     .bindPopup(title) //das Pop Up wird erzeugt
     .openPopup();   //das Pop Up wird direkt geöffnet
 
-for (let stop of STOPS){
+for (let stop of STOPS) {
     //Marker erzeugen für den Stop 
-    L.marker([stop.lat, stop.lng]).addTo(map) //der Marker wird gesetzt
-    .bindPopup(stop.title) //das Pop Up wird erzeugt
-    .openPopup();   //das Pop Up wird direkt geöffnet
+    let marker = L.marker([stop.lat, stop.lng],{
+        opacity:0.5})//Erstellung des Makers 
+        .addTo(map) //der Marker wird zur Karte hinzugefügt
+        .bindPopup(`<h3>${stop.title}</h3>
+        <a href="${stop.wikipedia}">Wikipedia</a>
+        `); //das Pop Up wird erzeugt
+    if (stop.user == 'ttfg22') {//wenn der User ttfg22 ist, wird das jeweilige Pop-Up geöffnet
+        marker.openPopup();
+    }
 }
