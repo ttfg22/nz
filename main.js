@@ -99,3 +99,12 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.marker([stop_lat, stop_long]).addTo(map) //der Marker wird gesetzt
     .bindPopup(title) //das Pop Up wird erzeugt
     .openPopup();   //das Pop Up wird direkt geöffnet
+
+for (let stop of STOPS){
+    console.log(stop);
+    console.log(stop.title);
+    console.log(stop.user);
+    console.log(stop.lat);
+    console.log(stop.lng);
+    console.log(stop.wikipedia);
+}
