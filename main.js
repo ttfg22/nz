@@ -4,57 +4,50 @@ let stop_long = 170.22;
 let zoom_factor = 13
 let title = 'Der Franz-Joseph Gletscher'
 
-const Stops = [
+const STOPS = [
     {
         title: "Christchurch",
         user: "manohog",
         lat: -43.531111,
         lng: 172.636667,
         wikipedia: "https://de.wikipedia.org/wiki/Christchurch"
-    },
-    {
+    }, {
         title: "Lake Tekapo",
         user: "chris0810",
         lat: -43.883333,
         lng: 170.516667,
         wikipedia: "https://de.wikipedia.org/wiki/Lake_Tekapo",
-    },
-    {
+    }, {
         title: "Moeraki Boulders",
         user: "Mirjamkirschner",
         lat: -45.345275,
         lng: 170.826061,
         wikipedia: "https://en.wikipedia.org/wiki/Moeraki_Boulders"
-    },
-    {
+    }, {
         title: "Milford Sound",
         user: "julianple",
         lat: -44.616667,
         lng: 167.866667,
         wikipedia: "https://de.wikipedia.org/wiki/Milford_Sound/Piopiotahi"
-    },
-    {
+    }, {
         title: "Wanaka",
         user: "sebastianv99",
         lat: -44.71,
         lng: 169.16,
         wikipedia: "https://de.wikipedia.org/wiki/Wanaka"
-    },
-    {
+    }, {
         title: "Der Fox Gletscher",
         user: "grueneli",
         lat: -43.53,
         lng: 170.15,
         wikipedia: "https://de.wikipedia.org/wiki/Fox-Gletscher"
-    },
-    {
+    }, {
         title: "Der Franz-Joseph Gletscher",
         user: "ttfg22",
         lat: -43.5,
         lng: 170.22,
         wikipedia: "https://de.wikipedia.org/wiki/Franz-Josef-Gletscher"
-    },
-    {
+    }, {
         title: "Abel Tasman Nationalpark",
         user: "fabianwild",
         lat: -40.833333,
