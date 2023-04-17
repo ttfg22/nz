@@ -95,21 +95,25 @@ let map = L.map('map').setView([stop_lat, stop_long], zoom_factor); // Hier wird
 //define watercolour layer
 let watercolour = L.tileLayer.provider('Stamen.Watercolor').addTo(map);
 //define open street map layer
-let osm =L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map)
+let osm = L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map)
 //define airport layer 
-let airports =L.tileLayer.provider('OPNVKarte').addTo(map)
+let airports = L.tileLayer.provider('OPNVKarte').addTo(map)
+//define terrain layer 
+let terrain = L.tileLayer.provider('Stamen.Terrain').addTo(map);
 
 //control the layer selection 
 L.control.layers({
     "Openstreetmap": osm,
     "Watercolor": watercolour,
-    "Airports": airports
+    "Airports": airports,
+    "Terrain": terrain
 }).addTo(map)
 
 L.control.scale({
     imperial: false,
-    position:"bottomright"})
-.addTo(map);
+    position: "bottomleft"
+})
+    .addTo(map);
 
 L.marker([stop_lat, stop_long]).addTo(map) //der Marker wird gesetzt
     .bindPopup(title) //das Pop Up wird erzeugt
@@ -117,8 +121,9 @@ L.marker([stop_lat, stop_long]).addTo(map) //der Marker wird gesetzt
 
 for (let stop of STOPS) {
     //Marker erzeugen für den Stop 
-    let marker = L.marker([stop.lat, stop.lng],{
-        opacity:0.5})//Erstellung des Makers 
+    let marker = L.marker([stop.lat, stop.lng], {
+        opacity: 1
+    })//Erstellung des Makers 
         .addTo(map) //der Marker wird zur Karte hinzugefügt
         .bindPopup(`<h3>${stop.title}</h3>
         <a href="${stop.wikipedia}">Wikipedia</a>
