@@ -91,7 +91,8 @@ console.log(STOPS);
 
 //die map Variable wird festgelegt 
 let map = L.map('map').setView([stop_lat, stop_long], zoom_factor); // Hier wird auf die Leaflet Map verwiesen; 13 steht für den z-Wert um den hinaus gezoomt wird-->
-
+//add full screen control pannel 
+L.addControl(L.map(Control.Fullscreen()))
 //define watercolour layer
 let watercolour = L.tileLayer.provider('Stamen.Watercolor').addTo(map);
 //define open street map layer
@@ -115,6 +116,8 @@ L.control.scale({
 })
     .addTo(map);
 
+map.addControl(new L.Control.Fullscreen());
+
 L.marker([stop_lat, stop_long]).addTo(map) //der Marker wird gesetzt
     .bindPopup(title) //das Pop Up wird erzeugt
     .openPopup();   //das Pop Up wird direkt geöffnet
@@ -132,3 +135,4 @@ for (let stop of STOPS) {
         marker.openPopup();
     }
 }
+
