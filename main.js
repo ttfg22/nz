@@ -92,7 +92,7 @@ console.log(STOPS);
 //die map Variable wird festgelegt 
 let map = L.map('map').setView([stop_lat, stop_long], zoom_factor); // Hier wird auf die Leaflet Map verwiesen; 13 steht für den z-Wert um den hinaus gezoomt wird-->
 //add full screen control pannel 
-L.addControl(L.map(Control.Fullscreen()))
+map.addControl(new L.Control.Fullscreen())
 //define watercolour layer
 let watercolour = L.tileLayer.provider('Stamen.Watercolor').addTo(map);
 //define open street map layer
